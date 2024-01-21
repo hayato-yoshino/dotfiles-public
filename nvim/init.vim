@@ -118,6 +118,22 @@ autocmd TermOpen * setlocal nonumber
 autocmd TermOpen * :startinsert
 
 """"""""""""""""
+" fzf
+""""""""""""""""
+nnoremap <silent> <C-j> :Files<CR>
+nnoremap <silent> <C-h> :Buffers<CR>
+nnoremap <silent> <Leader><C-j> :<C-u>silent call <SID>find_rip_grep()<CR>
+
+function! s:find_rip_grep() abort
+    call fzf#vim#grep(
+                \   'rg --ignore-file ~/.ignore --column --line-number --no-heading --hidden --smart-case .+ --glob "!{.git,tags}"',
+                \   1,
+                \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+                \   0,
+                \ )
+endfunction
+
+""""""""""""""""
 " easymotion
 """"""""""""""""
 map <Leader> <Plug>(easymotion-prefix)
@@ -129,6 +145,7 @@ map <Leader>h <Plug>(easymotion-linebackward)
 " defx
 """"""""""""""""
 nnoremap <silent> <C-k> :Defx<CR>
+let g:python3_host_prog = '~/.pyenv/shims/python3'
 " 隠しファイルをデフォルトで表示
 call defx#custom#option('_', {
     \ 'show_ignored_files': 1,
