@@ -7,7 +7,7 @@
 ## defx 使用前にすること
 1. `python3` が使用できることを確認
 ```
-:echo has("python3"
+:echo has("python3")
 ```
 2. `pynvim` インストール
 ```bash

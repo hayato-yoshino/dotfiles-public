@@ -1,8 +1,5 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	echo "Installing vim-plug..."
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-else
-	echo "vim-plug already installed."
 endif
 
 call plug#begin('~/.config/nvim/plugged')
@@ -13,20 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	" Plug 'sheerun/vim-polyglot'
-	" Plug 'airblade/vim-gitgutter'
-	" Plug 'tpope/vim-commentary'
-	" Plug 'editorconfig/editorconfig-vim'
-	" Plug 'mattn/vim-maketable'
-	" Plug 'rhysd/vim-clang-format', {'for': 'cpp'}
-	" Plug 'dense-analysis/ale'
-	" Plug 'tpope/vim-endwise', {'for': 'ruby'}
-	" Plug 'github/copilot.vim'
-	" Plug 'andymass/vim-matchup'
-	" Plug 'Yggdroot/indentLine'
-	" Plug 'vim-denops/denops.vim'
-	" Plug 'lambdalisue/gin.vim'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'sheerun/vim-polyglot'
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-commentary'
+	Plug 'editorconfig/editorconfig-vim'
+	Plug 'mattn/vim-maketable'
+	Plug 'rhysd/vim-clang-format', {'for': 'cpp'}
+	Plug 'dense-analysis/ale'
+	Plug 'tpope/vim-endwise', {'for': 'ruby'}
+	Plug 'github/copilot.vim'
+	Plug 'andymass/vim-matchup'
+	Plug 'Yggdroot/indentLine'
+	Plug 'lambdalisue/gin.vim'
 call plug#end()
 
 set nonumber
