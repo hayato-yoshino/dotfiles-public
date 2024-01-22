@@ -1,5 +1,6 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged')
@@ -89,6 +90,9 @@ inoremap 「 「」<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
+" Enter or C-m は補完ウィンドウで改行ではなく、確定挙動にする
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <C-m> pumvisible() ? "\<C-y>" : "\<C-m>"
 
 cmap <C-b> <Left>
 cmap <C-f> <Right>
