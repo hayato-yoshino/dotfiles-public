@@ -1,29 +1,29 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'arcticicestudio/nord-vim'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
-	Plug 'easymotion/vim-easymotion'
-	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'sheerun/vim-polyglot'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-commentary'
-	Plug 'editorconfig/editorconfig-vim'
-	Plug 'mattn/vim-maketable'
-	Plug 'rhysd/vim-clang-format', {'for': 'cpp'}
-	Plug 'dense-analysis/ale'
-	Plug 'tpope/vim-endwise', {'for': 'ruby'}
-	Plug 'github/copilot.vim'
-	Plug 'andymass/vim-matchup'
-	Plug 'Yggdroot/indentLine'
-	Plug 'lambdalisue/gin.vim'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sheerun/vim-polyglot'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-commentary'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'mattn/vim-maketable'
+    Plug 'rhysd/vim-clang-format', {'for': 'cpp'}
+    Plug 'dense-analysis/ale'
+    Plug 'tpope/vim-endwise', {'for': 'ruby'}
+    Plug 'github/copilot.vim'
+    Plug 'andymass/vim-matchup'
+    Plug 'Yggdroot/indentLine'
+    Plug 'lambdalisue/gin.vim'
 call plug#end()
 
 set nonumber
@@ -43,6 +43,7 @@ set showmatch
 autocmd FileType php setlocal sw=4 ts=4 sts=4 et
 autocmd FileType go setlocal sw=4 ts=4 sts=4 noet
 autocmd FileType sh setlocal sw=4 ts=4 sts=4 et
+autocmd FileType vim setlocal sw=4 ts=4 sts=4 et
 language message C
 colorscheme nord
 
