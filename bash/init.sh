@@ -11,3 +11,4 @@ fi
 # bash 設定ファイルをシンボリックリンクで配置
 ln -s $DIR/.bashrc $HOME/.bashrc
 
+source $HOME/.bashrc
