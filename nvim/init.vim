@@ -146,7 +146,6 @@ map <Leader>h <Plug>(easymotion-linebackward)
 " defx
 """"""""""""""""
 nnoremap <silent> <C-k> :Defx<CR>
-let g:python3_host_prog = '~/.pyenv/shims/python3'
 " 隠しファイルをデフォルトで表示
 call defx#custom#option('_', {
     \ 'show_ignored_files': 1,
