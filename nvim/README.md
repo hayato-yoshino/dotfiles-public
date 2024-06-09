@@ -3,7 +3,6 @@
 ```
 :PlugInstall
 ```
-
 ## defx 使用前にすること
 1. `python3` が使用できることを確認
 ```
@@ -17,3 +16,10 @@ pip3 install --user pynvim
 ```
 :UpdateRemotePlugins
 ```
+
+## Coc コマンド
+- `:CocInstall xxx` : xxx 拡張機能を追加
+- `:CocUninstall xxx` : xxx 拡張機能を削除
+- `:CocList extensions` : 拡張機能一覧表示
+- `:CocList commands` : コマンド一覧表示
+- `:CocConfig` : 設定ファイルを開く

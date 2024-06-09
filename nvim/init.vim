@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lambdalisue/gin.vim'
 call plug#end()
 
-set nonumber
+set number
 set mouse=
 set nowrap
 set termguicolors
@@ -216,6 +216,32 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> cd
   \ defx#do_action('change_vim_cwd')
 endfunction
+
+""""""""""""""""
+" coc.nvim
+"""""""""""""""
+command! -nargs=0 Format :call CocAction('format')
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gsd :call CocAction('jumpDefinition', 'split')<CR>
+nnoremap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gf :Format<CR>
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <space>c :<C-u>CocList commands<CR>
+" Use gh to show documentation in preview window.
+nnoremap <silent> gh :call ShowDocumentation()<CR>
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" 保存時，未importパッケージがあるとき自動補完する
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('gh', 'in')
+  endif
+endfunction
+autocmd FileType cpp nnoremap <silent> gf :<C-u>ClangFormat<CR>
 
 """""""""""""""
 " airline
