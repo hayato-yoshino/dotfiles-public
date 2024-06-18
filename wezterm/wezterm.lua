@@ -9,6 +9,8 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'iceberg-dark'
 
+-- 日本語変換時の CTRL-h を修正
+-- c.f. https://fjtkfm.hatenablog.com/entry/2023/12/16/164346
 config.use_ime = true
 config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 
