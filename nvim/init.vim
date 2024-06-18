@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'lambdalisue/gin.vim'
 call plug#end()
 
-set number
+set nonumber
 set mouse=
 set nowrap
 set termguicolors
