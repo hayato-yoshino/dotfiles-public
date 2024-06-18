@@ -1,6 +1,18 @@
 # プロンプトの設定
-# [Local.hayato-yoshino] <dir-name> $
-PS1='[\[\e[1m\]Local.\[\e[0m\]hayato-yoshino] \W \$'
+if [ -f ~/.config/git/git-completion.sh ]; then
+    source ~/.config/git/git-completion.sh
+fi
+if [ -f ~/.config/git/git-prompt.sh ]; then
+    source ~/.config/git/git-prompt.sh
+fi
+
+GIT_PS1_SHOWDIRTYSTATE=true
+
+if [ -f ~/.config/git/git-completion.sh ] && [ -f ~/.config/git/git-prompt.sh ]; then
+    PS1='[\[\e[38;2;136;192;208m\]Local\[\e[0m\]] \W\[\e[38;2;94;129;172m\]$(__git_ps1)\[\e[0m\] \$'
+else
+    PS1='[\[\e[38;2;136;192;208m\]Local\[\e[0m\]] \W \$'
+fi
 
 # 前方一致の履歴補完
 bind '"\C-n": history-search-forward'
