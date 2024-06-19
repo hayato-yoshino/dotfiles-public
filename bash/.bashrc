@@ -20,7 +20,7 @@ bind '"\C-p": history-search-backward'
 
 # fzf options
 # 最後の true は、rg がファイルを見つけられなかったときにエラーを返さないようにするため
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{vendor/*,node_modules/*,.git/*,tmp/*,tags,.ruff_cache/*,**/__pycache__/*}" || true'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{vendor/*,node_modules/*,.git/*,tmp/*,tags,.ruff_cache/*,**/__pycache__/*,**/.pytest_cache/*}" || true'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 export BUNDLER_EDITOR='nvim'
