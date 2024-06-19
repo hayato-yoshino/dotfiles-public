@@ -146,9 +146,10 @@ map <Leader>h <Plug>(easymotion-linebackward)
 " defx
 """"""""""""""""
 nnoremap <silent> <C-k> :Defx<CR>
-" 隠しファイルをデフォルトで表示
+" 特定ディレクトリを非表示
 call defx#custom#option('_', {
-    \ 'show_ignored_files': 1,
+    \ 'show_ignored_files': 0,
+    \ 'ignored_files': '.git,__pycache__,.ruff_cache,.pytest_cache',
     \ })
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
