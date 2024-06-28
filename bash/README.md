@@ -7,4 +7,4 @@ curl -o ~/.config/git/git-completion.sh \
 
 curl -o ~/.config/git/git-prompt.sh \
     https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-````````````````
+```

@@ -252,3 +252,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " git branch 名表示
 let g:airline#extensions#branch#enabled = 1
+
+""""""""""""""""
+" Yggdroot/indentLine
+""""""""""""""""
+" 有効化していると `` でコードブロックが消えてしまうので無効化
+" c.f. https://github.com/Yggdroot/indentLine/issues/349
+let g:vim_markdown_conceal_code_blocks = 0
