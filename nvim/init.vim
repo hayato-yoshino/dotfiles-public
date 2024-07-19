@@ -242,6 +242,8 @@ function! ShowDocumentation()
   endif
 endfunction
 autocmd FileType cpp nnoremap <silent> gf :<C-u>ClangFormat<CR>
+autocmd FileType python nnoremap <silent> gf :silent call CocAction('runCommand', 'ruff.executeFormat')<CR>
+autocmd FileType python nnoremap <silent> ga :silent call CocAction('runCommand', 'ruff.executeAutofix')<CR>
 
 """""""""""""""
 " airline
