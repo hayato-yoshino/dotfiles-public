@@ -17,7 +17,13 @@ config.color_scheme = 'iceberg-dark'
 config.use_ime = true
 config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 
-config.keys = {}
+config.keys = {
+	-- なぜかALT+¥で「\」ではなく、「«」が入力されるので修正
+	{key="«", action=wezterm.action{SendString="\\"}},
+}
+
+-- 左 ALT キーを押したときも、コンポジットキーを送信する
+config.send_composed_key_when_left_alt_is_pressed = true
 
 -- and finally, return the configuration to wezterm
 return config
