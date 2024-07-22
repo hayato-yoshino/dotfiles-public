@@ -66,8 +66,8 @@ nnoremap k gk
 nnoremap <silent> <S-o> :<C-u>call append(expand('.'), '')<Cr>j
 " 検索結果ハイライト無効化
 nnoremap <C-c><C-c> :nohlsearch<CR>
-" 現在のファイル名をコピー
-nnoremap <Leader>p :let @+ = expand('%')<CR>
+" 現在のファイル名（相対パス）をコピーし、ファイル名を表示
+nnoremap <Leader>p :let @+ = expand('%')<CR>:echo "Copied: " . expand('%')<CR>
 
 imap <C-p> <Up>
 imap <C-n> <Down>
