@@ -17,6 +17,12 @@ pip3 install --user pynvim
 :UpdateRemotePlugins
 ```
 
+## Homebrew で事前にインストールしておくもの
+
+```bash
+brew install ripgrep
+```
+
 ## Coc コマンド
 - `:CocInstall xxx` : xxx 拡張機能を追加
 - `:CocUninstall xxx` : xxx 拡張機能を削除
