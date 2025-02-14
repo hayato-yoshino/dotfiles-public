@@ -6,7 +6,8 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font_with_fallback({
-		"HackGen"
+		"HackGen",
+		"Hack",
 })
 
 -- For example, changing the color scheme:
