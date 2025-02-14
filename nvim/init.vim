@@ -3,6 +3,12 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall
 endif
 
+""""""""""""""""""""""""
+" sheerun/vim-polyglot
+""""""""""""""""""""""""
+" sheerun/vim-polyglot がloadされる前に宣言する必要がある
+let g:polyglot_disabled = ['python']
+
 call plug#begin('~/.config/nvim/plugged')
     Plug 'arcticicestudio/nord-vim'
     Plug 'vim-airline/vim-airline'
