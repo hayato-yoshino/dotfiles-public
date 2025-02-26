@@ -1,3 +1,5 @@
+echo "~/.bashrc が読み込まれました"
+
 # プロンプトの設定
 if [ -f ~/.config/git/git-completion.sh ]; then
     source ~/.config/git/git-completion.sh
@@ -17,6 +19,13 @@ fi
 # 前方一致の履歴補完
 bind '"\C-n": history-search-forward'
 bind '"\C-p": history-search-backward'
+
+# ctrl+d でログアウトしないようにする
+set -o ignoreeof
+export IGNOREEOF=9999
+
+alias gd='git diff --name-only | fzf | xargs -I{} git diff -- "{}"'
+alias ga='git diff --name-only | fzf -m | xargs -I{} git add -- "{}"'
 
 # fzf options
 # 最後の true は、rg がファイルを見つけられなかったときにエラーを返さないようにするため
