@@ -1,3 +1,9 @@
 [user]
 	name = hayato.yoshino
 	email =
+[core]
+	pager = delta -- --theme=nord
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	theme = nord

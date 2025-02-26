@@ -25,7 +25,7 @@ set -o ignoreeof
 export IGNOREEOF=9999
 
 alias gd='git diff --name-only | fzf | xargs -I{} git diff -- "{}"'
-alias ga='git diff --name-only | fzf -m | xargs -I{} git add -- "{}"'
+alias ga='(git diff --name-only; git ls-files --others --exclude-standard) | fzf -m | xargs -I{} git add -- "{}"'
 
 # fzf options
 # 最後の true は、rg がファイルを見つけられなかったときにエラーを返さないようにするため
